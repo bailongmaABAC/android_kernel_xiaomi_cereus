@@ -1,0 +1,29 @@
+name: Build Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  Build-Kernel:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Build Kernel
+      uses: dabao1955/kernel_build_action@main
+      with:
+          kernel-url: https://github.com/bailongmaABAC/android_kernel_xiaomi_cereus
+          kernel-dir: kernel-4.19
+          kernel-branch: main
+          config: cereus_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          ksu: false
+          ksu-version: main
+          android-version: 10
+          aosp-clang-version: r416183b
+          disable-lto: true
+          anykernel3: true
