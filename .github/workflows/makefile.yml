@@ -24,6 +24,6 @@ jobs:
           ksu: false
           ksu-version: main
           android-version: 10
-          aosp-clang-version: r3289846
+          aosp-clang-version: r416183
           disable-lto: true
           anykernel3: true
